@@ -1,0 +1,285 @@
+/* general area style and layout-ing everything because consistency is key! */
+body {
+  font-family: Calibri Light, sans-serif;
+  padding-left: 12vw;
+  padding-right: 12vw;
+  padding-top: 1.5vw;
+  padding-bottom: 7.25vw;
+  background: #072f07;
+  overflow: hidden;
+}
+
+/* important values for grid shenanigans */
+:root{
+  --main-radius:5px;
+  --main-padding:5px;
+}
+
+/* Making it so that EVERYTHING is centered on the screen */
+.all {
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* no select pls :( */
+.disable-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* GOOGOL TIME*/
+#search form {
+  background-color: rgba(53,133,58, .1);
+  border-radius:var(--main-radius);
+  padding-top: var(--main-padding);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* GOOGOL TIME ft. fancy hover */
+#search form:hover {
+  background-color: rgba(53,133,58, .2);
+  opacity: 100%;
+  mix-blend-mode: screen;
+}
+
+/* CSS for when you're typing something on the search bar! */
+input {
+  all: unset;
+  font: Calibri, sans-serif;
+  font-size: 20px;
+  color: #c9d46f;
+  opacity: 100%;
+  height: 100%;
+  width: 100%;
+  padding: 4px 10px;
+}
+
+/* placeholder search text */
+::placeholder {
+  color: #c9d46f;
+  opacity: 0.5;
+}
+
+/* search icon */
+svg {
+  color: #fff;
+  fill: currentColor;
+  opacity: 0.4;
+  width: 24px;
+  height: 24px;
+  padding: 10px;
+}
+
+/* hover animation for icon */
+svg:hover {
+  opacity: 100%;
+}
+
+/* css for icon/button area */
+button {
+       all: unset;
+       cursor: pointer;
+       width: 44px;
+       height: 44px;
+
+}
+
+/* TIME/DATE GENERAL CSS */
+.clock-box {
+    padding-top: 5vw;
+    font-weight: Calibri;
+    position: relative;
+    color: #c9d46f;
+    opacity: 70%;
+    flex-direction: row;
+    display: block;
+    text-align: center;
+    justify-content:  space-around;
+}
+
+/* fancy hover animation for general clock-box */
+.clock-box:hover {
+  color: #c9d46f;
+  opacity: 100%;
+
+}
+
+/* tinkering css for time portion of clock-box */
+#clockbox {
+    font-size: 3.5vw;
+}
+
+/* tinkering css for date portion of clock-box */
+#datebox {
+  font-size: 1.5vw;
+}
+
+
+
+/* header text for upcoming gridded boxes */
+.header-texts {
+  padding-top: 1vw;
+  padding-left: 1.2vw;
+  padding-right: 1.2vw;
+  font-size: 1.5vw;
+  font-weight: normal;
+  color: #c9d46f;
+  text-align: center;
+}
+
+ul.links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* css for actual links */
+a {
+  color: #c9d46f;
+  opacity: 60%;
+  font-size: 1.9vw;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* fancy hover animation for links */
+a:hover {
+  opacity: 100%;
+}
+
+/* it is grid time my friends (aka ask google for help time)
+
+    Main thing I learned from YouTube: fr is a useful unit
+    because it divides things based on fractions instead of
+    restrictive specific values.
+*/
+.grid-container {
+  display: grid;
+  height: 80vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.4fr 1.4fr;
+  grid-template-areas:
+    "gap gap search search search"
+    "image image section-a section-b section-c"
+    "image image section-d section-e section-f";
+  grid-gap: 1.0rem;
+}
+
+/* specific css for different grids/sections, most have
+    copy/pasted codes to achieve consistency (with exceptions
+    to #search and #image because they have different
+    purposes/layout)*/
+#search {
+  grid-area: search;
+  border-radius:var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+/* I want #image to look blended into the background
+   until you hover on it with your mouse! That would be pretty sick */
+#image {
+  grid-area: image;
+  background-blend-mode: overlay;
+  border-radius:var(--main-radius);
+}
+
+#image img {
+  object-fit: cover;
+  mix-blend-mode: lighten;
+  overflow: hidden;
+  opacity: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+/* fancy hover animation (extra-fancy because it involves
+    changing how an image looks!)*/
+#image img:hover {
+  opacity: 70%;
+  mix-blend-mode: screen;
+}
+
+/* general layout of six smaller sections of the homepage*/
+#section-a {
+  grid-area: section-a;
+  border-radius:var(--main-radius);
+  padding-top: var(--main-padding);
+  background: rgba(53,133,58, .1);
+}
+
+#section-b {
+  grid-area: section-b;
+  border-radius:var(--main-radius);
+  padding-top: var(--main-padding);
+  background: rgba(53,133,58, .1);
+}
+
+#section-c {
+  grid-area: section-c;
+  border-radius:var(--main-radius);
+  padding-top: var(--main-padding);
+  background: rgba(53,133,58, .1);
+}
+
+#section-d {
+  grid-area: section-d;
+  border-radius:var(--main-radius);
+  padding-top: var(--main-padding);
+  background: rgba(53,133,58, .1);
+}
+
+#section-e {
+  grid-area: section-e;
+  border-radius:var(--main-radius);
+  padding-top: var(--main-padding);
+  background: rgba(53,133,58, .1);
+}
+
+#section-f {
+  grid-area: section-f;
+  border-radius:var(--main-radius);
+  padding-top: var(--main-padding);
+  background: rgba(53,133,58, .1);
+}
+
+/* ALL the fancy hover animations for each sections!*/
+#section-a:hover {
+  background: rgba(107,167,7,0.2);
+  mix-blend-mode: screen;
+}
+
+#section-b:hover {
+  background: rgba(107,167,7,0.2);
+  mix-blend-mode: screen;
+}
+
+#section-c:hover {
+  background: rgba(107,167,7,0.2);
+  mix-blend-mode: screen;
+}
+
+#section-d:hover {
+  background: rgba(107,167,7,0.2);
+  mix-blend-mode: screen;
+}
+
+#section-e:hover {
+  background: rgba(107,167,7,0.2);
+  mix-blend-mode: screen;
+}
+
+#section-f:hover {
+  background: rgba(107,167,7,0.2);
+  mix-blend-mode: screen;
+}

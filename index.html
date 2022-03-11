@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>w e l c o m e</title>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link rel="icon" href="./icons/favicon.ico">
+ <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+<div class= "all">
+  <div class= "disable-select">
+      <div class= "grid-container">
+        <div id="search">
+          <form id="form" role="search" action="http://www.google.com/search?client=firefox-b-1-d&q=">
+              <input type="search" id="query" name="q"
+                    placeholder="search"
+                    aria-label="Search through site content">
+            <button>
+              <svg viewBox="0 0 1024 1024">
+                <path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z">
+                </path>
+              </svg>
+            </button>
+          </form>
+          <script>
+            const f = document.getElementById('form');
+            const q = document.getElementById('query');
+            const google = 'https://www.google.com/search?client=firefox-b-1-d&q=';
+            const site = '';
+            function submitted(event) {
+            event.preventDefault();
+            const url = google + site + '+' + q.value;
+            const win = window.open(url, '_self');
+            win.focus();
+              }
+            f.addEventListener('submit', submitted);
+          </script> <!-- _self for same tab, _blank for new window!  -->
+        </div> <!-- #search -->
+      <div id= "image">
+        <img src="./Images/gavin-mcgruddy-p23YJJMT16s-unsplash.jpg"
+             alt="GREEN">
+      </div> <!-- #image -->
+      <div id= "section-a">
+        <div class="clock-box">
+        <div id="clockbox"></div>
+        <script type="text/javascript">
+        function GetClock(){
+        var d=new Date();
+        var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds();
+        if(nmin<=9) nmin="0"+nmin;
+        if(nsec<=9) nsec="0"+nsec;
+
+        var clocktext=""+nhour+":"+nmin+":"+nsec+"";
+        document.getElementById('clockbox').innerHTML=clocktext;
+        }
+
+        GetClock();
+        setInterval(GetClock,1000);
+        </script>
+
+
+        <div id="datebox"></div>
+
+        <script type="text/javascript">
+          var tday=["sun","mon","tues","wed","thurs","fri","sat"];
+          var tmonth=["jan","feb","mar","apr","may","june","jul","aug","sept","oct","nov","dec"];
+
+          function GetClock(){
+            var d=new Date();
+            var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+
+            var clocktext=""+tday[nday]+"| "+tmonth[nmonth]+" "+ndate+", "+nyear+"";
+            document.getElementById('datebox').innerHTML=clocktext;
+            }
+
+              GetClock();
+              setInterval(GetClock,1000);
+            </script>
+          </div>
+      </div> <!-- #section-a -->
+      <div id= "section-b">
+        <div class= "header-texts">
+          <p> school </p>
+        </div>
+        <ul class= "links">
+          <li><a href= "https://bbhosted.cuny.edu/">blckb</a></li>
+          <li><a href= "https://home.cunyfirst.cuny.edu/">cnyft</a></li>
+          <li><a href= "https://classroom.google.com/u/2/h">gclsr</a></li>
+          <li><a href= "https://outlook.office365.com/mail/inbox">outlk</a></li>
+        </ul>
+
+        <div class="footer-text">
+        <p>.</p>
+        </div>
+      </div> <!-- #section-b -->
+      <div id= "section-c">
+        <div class= "header-texts">
+          <p>mail</p>
+        </div>
+        <ul class= "links">
+          <li><a href= "https://mail.google.com/mail/u/1/#inbox">-----</a></li>
+          <li><a href= "https://mail.google.com/mail/u/0/#inbox">-----</a></li>
+          <li><a href= "https://mail.google.com/mail/u/4/#inbox">-----</a></li>
+          <li><a href= "https://mail.google.com/mail/u/3/#inbox">-----</a></li>
+        </ul>
+
+        <div class="footer-text">
+          <p>.</p>
+        </div>
+      </div> <!-- #section-c -->
+      <div id= "section-d">
+        <div class= "header-texts">
+          <p> art </p>
+        </div>
+        <ul class= "links">
+          <li><a href= "https://drive.google.com/">deshi</a></li>
+          <li><a href= "https://www.pexels.com/">pexls</a></li>
+          <li><a href= "https://pixabay.com/">pixby</a></li>
+          <li><a href= "https://unsplash.com/">unspl</a></li>
+        </ul>
+
+        <div class="footer-text">
+          <p>.</p>
+        </div>
+      </div> <!-- #section-d -->
+      <div id= "section-e">
+        <div class= "header-texts">
+          <p> inspire </p>
+        </div>
+        <ul class= "links">
+          <li><a href= "https://www.ai-ap.com/">aiap</a></li>
+          <li><a href= "https://www.awwwards.com/">awrds</a></li>
+          <li><a href= "https://www.behance.net/">behnc</a></li>
+          <li><a href= "https://www.pinterest.com">pntrt</a></li>
+        </ul>
+
+        <div class="footer-text">
+          <p>.</p>
+        </div>
+      </div> <!-- #section-e -->
+      <div id= "section-f">
+        <div class= "header-texts">
+          <p> social </p>
+        </div>
+        <ul class= "links">
+          <li><a href= "https://www.instagram.com/">instg</a></li>
+          <li><a href= "https://www.youtube.com">ytbe</a></li>
+          <li><a href= "https://www.reddit.com/">rddt</a></li>
+          <li><a href= "https://www.artstation.com">artsn</a></li>
+        </ul>
+
+        <div class="footer-text">
+          <p>.</p>
+      </div> <!-- #section-f -->
+    </div> <!-- .grid-container -->
+  </div> <!-- .disable-select -->
+</div> <!-- .all -->
+</body>
+</html>
